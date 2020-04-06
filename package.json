@@ -7,7 +7,8 @@
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
     "sourcemap": "source-map-explorer public/scripts/app.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "npm run build && firebase deploy --only hosting"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@rollup/plugin-alias": "^3.0.1",
     "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-replace": "^2.3.1",
     "@rollup/plugin-typescript": "^4.0.0",
     "browser-sync": "^2.26.7",
     "compression": "^1.7.4",
@@ -46,7 +48,13 @@
     "@captaincodeman/rdx": "^1.0.0-rc.2",
     "@captaincodeman/rdx-model": "^1.0.0-rc.5",
     "@captaincodeman/router": "^1.0.1",
+    "@material/mwc-button": "^0.14.1",
+    "@material/mwc-drawer": "^0.14.1",
+    "@material/mwc-icon-button": "^0.14.1",
+    "@material/mwc-top-app-bar": "^0.14.1",
+    "firebase": "^7.13.2",
     "lit-element": "^2.3.1",
-    "lit-html": "^1.2.1"
+    "lit-html": "^1.2.1",
+    "reselect": "^4.0.0"
   }
 }
