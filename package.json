@@ -4,6 +4,10 @@
   "description": "Rdx Demo Project",
   "main": "index.js",
   "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "sourcemap": "source-map-explorer public/scripts/app.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +25,21 @@
   "bugs": {
     "url": "https://github.com/CaptainCodeman/rdx-demo/issues"
   },
-  "homepage": "https://github.com/CaptainCodeman/rdx-demo#readme"
+  "homepage": "https://github.com/CaptainCodeman/rdx-demo#readme",
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.0.1",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-typescript": "^4.0.0",
+    "browser-sync": "^2.26.7",
+    "compression": "^1.7.4",
+    "connect-history-api-fallback": "^1.6.0",
+    "connect-logger": "0.0.1",
+    "rollup": "^2.3.3",
+    "rollup-plugin-minify-html-literals": "^1.2.3",
+    "rollup-plugin-size": "^0.2.2",
+    "rollup-plugin-terser": "^5.3.0",
+    "source-map-explorer": "^2.4.2",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  }
 }
