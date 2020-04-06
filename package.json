@@ -1,0 +1,25 @@
+{
+  "name": "rdx-demo",
+  "version": "1.0.0",
+  "description": "Rdx Demo Project",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CaptainCodeman/rdx-demo.git"
+  },
+  "keywords": [
+    "rdx",
+    "redux",
+    "state",
+    "pwa",
+    "demo"
+  ],
+  "author": "Simon Green <simon@captaincodeman.com> (https://github.com/captaincodeman)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaptainCodeman/rdx-demo/issues"
+  },
+  "homepage": "https://github.com/CaptainCodeman/rdx-demo#readme"
+}
