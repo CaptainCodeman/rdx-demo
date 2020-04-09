@@ -1,5 +1,5 @@
-import { customElement, property } from 'lit-element'
-import { Connected, State, Route, RouteSelectors } from './connected'
+import { customElement, property, html } from 'lit-element'
+import { Connected, State, RouteSelectors } from './connected'
 import { sharedStyles } from './shared-styles'
 
 import './view-404'
@@ -16,17 +16,30 @@ declare global {
 
 @customElement('app-view')
 export class AppViewElement extends Connected {
-  @property({ type: Object })
-  route: Route
+  @property({ type: String })
+  view: string
 
   mapState(state: State) {
     return {
-      route: RouteSelectors.route(state),
+      view: RouteSelectors.view(state),
     }
   }
 
   render() {
-    return this.route.view
+    switch (this.view) {
+      case 'home':
+        return html `<view-home></view-home>`
+      case 'about':
+        return html `<view-about></view-about>`
+      case 'account':
+        return html `<view-account></view-account>`
+      case 'signin':
+        return html `<view-signin></view-signin>`
+      case '404':
+        return html `<view-404></view-404>`
+      default:
+        return html `<view-404></view-404>`
+      }
   }
 
   static get styles() {

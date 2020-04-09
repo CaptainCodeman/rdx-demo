@@ -34,14 +34,14 @@ export class AuthStatusElement extends Connected {
   render() {
     return this.authenticated
       ? html`
-          <a href="/account"><img src=${this.user.photoURL!}></a>
+          <a href="/account" title="View Account"><img src=${this.user.photoURL!}></a>
           <div>
             <h2>${this.user.displayName}</h2>
             <p>${this.user.email}</p>
           </div>
         `
       : html`
-          <a href="/signin">
+          <a href="/signin" title="Sign In">
             <svg viewBox="0 0 24 24">
               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
             </svg>
@@ -60,7 +60,6 @@ export class AuthStatusElement extends Connected {
           width: 255px;
           height: 56px;
           padding: 3px;
-          background-color: #f7f7f7;
           display: flex;
           box-sizing: border-box;
           contain: strict;
@@ -70,11 +69,11 @@ export class AuthStatusElement extends Connected {
           width: 50px;
           height: 50px;
           margin-right: 5px;
-          color: #666;
+          color: #444;
         }
 
         svg path {
-          fill: #666;
+          fill: #444;
         }
 
         h2 {
@@ -82,14 +81,14 @@ export class AuthStatusElement extends Connected {
           line-height: 18px;
           font-weight: normal;
           margin: 8px 0 6px 0;
-          color: #333;
+          color: #222;
         }
 
         p {
           font-size: 12px;
           line-height: 12px;
           margin: 6px 0;
-          color: #999;
+          color: #666;
         }
 
         div {

@@ -1,3 +1,4 @@
 .firebase/
 node_modules/
 public/scripts/
+public/service-worker*

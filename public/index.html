@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
     <title>Rdx Demo</title>
+    <meta name="Description" content="Demonstration app for rdx and other libraries">
+
+    <meta name="apple-mobile-web-app-title" content="rdx-demo">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="x5-page-mode" content="app">
+    <meta name="browsermode" content="application">
 
     <base href="/">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block" media="print" onload="this.media='all'">
+
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://firebaseinstallations.googleapis.com">
+    <link rel="preconnect" href="https://firebaseremoteconfig.googleapis.com">
+    <link rel="preconnect" href="https://www.gstatic.com">
+
+    <link rel="manifest" href="index.webmanifest">
+    <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAADspwAA/vnsAO6rAAD///8A7awAAO6sAADvtBcA7q0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzAzMzMzMzMzM0IzMzMzMzMzNHQzMzMzMzMzN3UzMzMzMzMxd3MzMzMzM3dzMzMzMzMzN3czMzMzMzMzR0MzMzMzMzMzdDMzMzMzMzM0YzMzMzMzMzM0MzMzMzMzMzMzMzMzMzMzMzMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" type="image/x-icon" />
+
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <link rel="icon" href="images/icons/icon-512x512.png" sizes="512x512">
+    <link rel="icon" href="images/icons/icon-384x384.png" sizes="384x384">
+    <link rel="icon" href="images/icons/icon-192x192.png" sizes="192x192">
+    <link rel="icon" href="images/icons/icon-152x152.png" sizes="152x152">
+    <link rel="icon" href="images/icons/icon-144x144.png" sizes="144x144">
+    <link rel="icon" href="images/icons/icon-128x128.png" sizes="128x128">
+    <link rel="icon" href="images/icons/icon-96x96.png" sizes="96x96">
+    <link rel="icon" href="images/icons/icon-72x72.png" sizes="72x72">
 
     <style>
       :root {
@@ -65,10 +94,17 @@
         -webkit-text-size-adjust: none;
       }
     </style>
-
-    <script src="/scripts/app.js" async module></script>
+    <script>
+      window.addEventListener('load', _ => {
+        if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+          navigator.serviceWorker.register('/service-worker.js');
+        }
+      });
+    </script>
+    <script src="/scripts/index.js" async type="module"></script>
   </head>
   <body>
     <app-shell></app-shell>
+    <noscript>This app requires JavaScript to function</noscript>
   </body>
 </html>

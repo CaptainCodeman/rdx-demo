@@ -116,7 +116,7 @@ export class AppShellElement extends LitElement {
 
       auth-status {
         height: 56px;
-        background-color: #eee;
+        background-color: #f8f8f8;
       }
 
       /* TODO: style ul / li nav links */

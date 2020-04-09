@@ -1,0 +1,12 @@
+ui:
+- mocha-typescript
+require:
+- ts-node/register
+extension:
+- ts
+- rules
+spec: test/**/*.spec.ts
+files: 
+- src/**/*.ts
+- firebase/firestore.rules
+watch: true

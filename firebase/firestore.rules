@@ -1,7 +1,29 @@
+rules_version = '2';
+
+// rules:
+// read - get / list
+// write - create / update / delete
+
 service cloud.firestore {
+  function isSignedIn() {
+    return request.auth != null;
+  }
+
   match /databases/{database}/documents {
     match /{document=**} {
-      allow read, write;
+      // default to disallowing reads and writes
+      allow read, write: if false;
+    }
+
+    match /users/{user} {
+      function isOwner() {
+        return isSignedIn()
+            && user == request.auth.uid;
+      }
+
+      match /todos/{todo} {
+        allow read, write: if isOwner();
+      }
     }
   }
 }

@@ -6,9 +6,13 @@
   "scripts": {
     "build": "rollup -c",
     "build:watch": "rollup -c -w",
+    "sw": "workbox injectManifest",
     "sourcemap": "source-map-explorer public/scripts/app.js",
     "start": "node server.js",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "deploy": "npm run build && npm run sw && firebase deploy --only hosting",
+    "test:emu": "firebase emulators:start --only firestore",
+    "test:run": "TS_NODE_PROJECT=test/tsconfig.json mocha",
+    "test": "npm run test:emu & npm run test:run"
   },
   "repository": {
     "type": "git",
@@ -28,21 +32,33 @@
   },
   "homepage": "https://github.com/CaptainCodeman/rdx-demo#readme",
   "devDependencies": {
+    "@firebase/testing": "^0.18.2",
     "@rollup/plugin-alias": "^3.0.1",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-replace": "^2.3.1",
     "@rollup/plugin-typescript": "^4.0.0",
+    "@types/mocha": "^7.0.2",
     "browser-sync": "^2.26.7",
     "compression": "^1.7.4",
     "connect-history-api-fallback": "^1.6.0",
     "connect-logger": "0.0.1",
-    "rollup": "^2.3.3",
+    "mocha": "^7.1.1",
+    "mocha-typescript": "^1.1.17",
+    "rollup": "^2.4.0",
     "rollup-plugin-minify-html-literals": "^1.2.3",
     "rollup-plugin-size": "^0.2.2",
     "rollup-plugin-terser": "^5.3.0",
     "source-map-explorer": "^2.4.2",
+    "ts-node": "^8.8.2",
     "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "workbox-build": "^5.1.2",
+    "workbox-cli": "^5.1.2",
+    "workbox-google-analytics": "^5.1.2",
+    "workbox-precaching": "^5.1.2",
+    "workbox-routing": "^5.1.2",
+    "workbox-strategies": "^5.1.2",
+    "workbox-window": "^5.1.2"
   },
   "dependencies": {
     "@captaincodeman/rdx": "^1.0.0-rc.2",

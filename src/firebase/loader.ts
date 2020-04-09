@@ -34,12 +34,16 @@ export const app = loadFirebase.then(firebase => firebase.app())
 
 export const authLoader = app.then(app => loadModule('auth').then(() => app.auth()))
 
-export const firestoreLoader = app.then(app => loadModule('firestore').then(() => {
-  const fs = app.firestore()
-  fs.enablePersistence({ synchronizeTabs: true })
-  return fs
-}))
+// export const firestoreLoader = app.then(app => loadModule('firestore').then(() => {
+//   const fs = app.firestore()
+//   fs.enablePersistence({ synchronizeTabs: true })
+//   return fs
+// }))
 
-export const analyticsLoader = app.then(app => loadModule('analytics').then(() => app.analytics()))
-
-export const performanceLoader = app.then(app => loadModule('performance').then(() => app.performance()))
+// TODO: use requestIdleCallback
+setTimeout(() => {
+  app.then(app => {
+    loadModule('analytics').then(() => app.analytics())
+    loadModule('performance').then(() => app.performance())
+  })
+}, 1000)

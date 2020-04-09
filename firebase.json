@@ -10,11 +10,28 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    "headers": [{
+      "source": "/",
+      "headers": [{
+        "key": "Link",
+        "value": "</scripts/index.js>;rel=preload;as=script;crossorigin,</scripts/state.js>;rel=preload;as=script;crossorigin,</scripts/views.js>;rel=preload;as=script;crossorigin,</scripts/vendor.js>;rel=preload;as=script;crossorigin"
+      }]
+    },{
+      "source": "**/*.@(jpg|jpeg|gif|png|svg|ico)",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=86400"
+      }]
+    }, {
+      "source": "**/*.@(html|js|css|json|txt)",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=300, must-revalidate"
+      }]
+    }],
+    "rewrites": [{
+      "source": "**",
+      "destination": "/index.html"
+    }]
   }
 }

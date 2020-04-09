@@ -1,3 +1,5 @@
+import { Todo } from './models'
+
 const getFireStoreProp = value => {
   const props = { 'arrayValue': 1, 'bytesValue': 1, 'booleanValue': 1, 'doubleValue': 1, 'geoPointValue': 1, 'integerValue': 1, 'mapValue': 1, 'nullValue': 1, 'referenceValue': 1, 'stringValue': 1, 'timestampValue': 1 }
   return Object.keys(value).find(k => props[k] === 1)
@@ -43,3 +45,17 @@ export const toJS = (obj: any) => {
   }
   return obj
 }
+
+export const todoConverter = {
+  toFirestore(todo: Todo): firebase.firestore.DocumentData {
+    const { id, ...data } = todo
+    return data
+  },
+  fromFirestore(
+    snapshot: firebase.firestore.QueryDocumentSnapshot,
+    options: firebase.firestore.SnapshotOptions
+  ): Todo {
+    const data = snapshot.data(options)!;
+    return <Todo>{ ...toJS(data), id: snapshot.id };
+  }
+};
