@@ -3,17 +3,7 @@ import { State, Store } from '../store'
 import { createSelector } from 'reselect'
 import { authLoader } from '../../firebase'
 
-// TODO: this _should_ work, but it doesn't
-// export type User = typeof import('firebase').User
-
-export interface User {
-  displayName: string | null;
-  email: string | null;
-  phoneNumber: string | null;
-  photoURL: string | null;
-  providerId: string;
-  uid: string;
-}
+export type User = import('firebase').UserInfo
 
 export interface AuthState {
   user: User | null
