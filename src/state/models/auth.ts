@@ -1,7 +1,7 @@
 import { createModel } from '@captaincodeman/rdx-model'
 import { State, Store } from '../store'
 import { createSelector } from 'reselect'
-import { authLoader } from '../../firebase'
+import { authLoader } from '../firebase'
 
 export type User = import('firebase').UserInfo
 

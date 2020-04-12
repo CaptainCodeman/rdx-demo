@@ -1,7 +1,7 @@
 import { suite, test } from 'mocha-typescript'
 import * as firebase from '@firebase/testing'
 import { AbstractTestBase, adminApp, anonApp, authedApp } from './rules-base';
-import { Todo } from '../src/firebase/models'
+import { Todo } from '../src/state/firebase/models'
 
 const todo: Todo = {
   id: '1',

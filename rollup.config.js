@@ -21,7 +21,6 @@ const state = [
   '@captaincodeman/rdx-model',
   '@captaincodeman/router',
   'reselect',
-  'src/firebase',
   'src/state',
 ]
 
