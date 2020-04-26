@@ -11,3 +11,4 @@ export namespace RouteSelectors {
 }
 
 export { AuthSelectors } from './models/auth'
+export { MyModelSelectors } from './models/mymodel'

@@ -5,6 +5,8 @@ import { sharedStyles } from './shared-styles'
 import './view-404'
 import './view-about'
 import './view-account'
+import './view-subscribe'
+import './view-dispatch'
 import './view-home'
 import './view-signin'
 
@@ -29,8 +31,12 @@ export class AppViewElement extends Connected {
     switch (this.view) {
       case 'home':
         return html `<view-home></view-home>`
-      case 'about':
-        return html `<view-about></view-about>`
+        case 'about':
+          return html `<view-about></view-about>`
+      case 'dispatch':
+        return html `<view-dispatch></view-dispatch>`
+      case 'subscribe':
+        return html `<view-subscribe></view-subscribe>`
       case 'account':
         return html `<view-account></view-account>`
       case 'signin':

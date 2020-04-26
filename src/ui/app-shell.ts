@@ -74,6 +74,8 @@ export class AppShellElement extends LitElement {
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/dispatch">Dispatch Example</a></li>
+            <li><a href="/subscribe">Subscribe Example</a></li>
           </ul>
         </div>
         <div slot="appContent">

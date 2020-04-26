@@ -6,6 +6,8 @@ const routes = {
   '/': 'home',
   '/about': 'about',
   '/account': 'account',
+  '/dispatch': 'dispatch',
+  '/subscribe': 'subscribe',
   '/signin': 'signin',
   '/*': '404',
 }
