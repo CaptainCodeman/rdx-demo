@@ -15,7 +15,7 @@ const drawerModalAt = 768
 
 declare global {
   interface HTMLElementTagNameMap {
-    'view-shell': AppShellElement
+    'app-shell': AppShellElement
   }
 }
 
