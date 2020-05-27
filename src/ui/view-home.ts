@@ -13,7 +13,7 @@ export class ViewHomeElement extends LitElement {
   render() {
     return html`
       <h1>Welcome</h1>
-      <p>Not much here right now &hellip;</p>
+      <p>Simple demo app &hellip;</p>
     `
   }
 

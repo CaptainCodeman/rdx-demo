@@ -11,7 +11,7 @@ browserSync.init({
     routes: {
       '/node_modules': 'node_modules',
       '/src': 'src',
-  }
+    }
   },
   files: [
     'scripts/**',
