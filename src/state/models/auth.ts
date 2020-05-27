@@ -1,4 +1,4 @@
-import { createModel } from '@captaincodeman/rdx-model'
+import { createModel } from '@captaincodeman/rdx'
 import { State, Store } from '../store'
 import { createSelector } from 'reselect'
 import { authLoader } from '../firebase'
@@ -26,37 +26,39 @@ export default createModel({
     },
   },
 
-  effects: (store: Store) => ({
-    async signout() {
-      const auth = await authLoader
-      await auth.signOut()
-    },
+  effects(store: Store) {
+    return {
+      async signout() {
+        const auth = await authLoader
+        await auth.signOut()
+      },
 
-    async signinProvider(name: string) {
-      const auth = await authLoader
-      const provider = providerFromName(name)
-      await auth.signInWithRedirect(provider)
-    },
+      async signinProvider(name: string) {
+        const auth = await authLoader
+        const provider = providerFromName(name)
+        await auth.signInWithRedirect(provider)
+      },
 
-    // to support signing in with other methods:
-    // async signinEmailPassword(payload: { email: string, password: string }) {
-    //   const auth = await authLoader
-    //   await auth.signInWithEmailAndPassword(payload.email, payload.password)
-    // },
+      // to support signing in with other methods:
+      // async signinEmailPassword(payload: { email: string, password: string }) {
+      //   const auth = await authLoader
+      //   await auth.signInWithEmailAndPassword(payload.email, payload.password)
+      // },
 
-    async init() {
-      const auth = await authLoader
-      const dispatch = store.dispatch()
+      async init() {
+        const auth = await authLoader
+        const dispatch = store.dispatch()
 
-      auth.onAuthStateChanged(async user => {
-        if (user) {
-          dispatch.auth.signedIn(user)
-        } else {
-          dispatch.auth.signedOut()
-        }
-      })
-    },
-  })
+        auth.onAuthStateChanged(async user => {
+          if (user) {
+            dispatch.auth.signedIn(user)
+          } else {
+            dispatch.auth.signedOut()
+          }
+        })
+      },
+    }
+}
 })
 
 function providerFromName(name: string) {

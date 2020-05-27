@@ -11,14 +11,12 @@ import size from 'rollup-plugin-size'
 
 const production = !process.env.ROLLUP_WATCH;
 
-
 const views = [
   'src/ui',
 ]
 
 const state = [
   '@captaincodeman/rdx',
-  '@captaincodeman/rdx-model',
   '@captaincodeman/router',
   'reselect',
   'src/state',

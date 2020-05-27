@@ -1,5 +1,5 @@
 import createMatcher from '@captaincodeman/router'
-import { routingPluginFactory } from '@captaincodeman/rdx-model'
+import { routingPluginFactory } from '@captaincodeman/rdx'
 import * as models from './models'
 
 const routes = {
