@@ -43,7 +43,18 @@ export const authLoader = app.then(app => loadModule('auth').then(() => app.auth
 // TODO: use requestIdleCallback
 setTimeout(() => {
   app.then(app => {
-    loadModule('analytics').then(() => app.analytics())
-    loadModule('performance').then(() => app.performance())
+    // Support for Google Analytics
+    //
+    // Uncomment the following line, if you want to use
+    // Firebase's integration with Google Analytics
+    // Note that you'll require the corresponding entry
+    // in config, too.
+    // loadModule('analytics').then(() => app.analytics())
+
+    // Support for performance measurements
+    //
+    // Uncomment the following line, if you want to use
+    // Firebase's performance metrics.
+    // loadModule('performance').then(() => app.performance())
   })
 }, 1000)
