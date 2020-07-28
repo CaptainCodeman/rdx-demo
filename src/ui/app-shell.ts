@@ -79,7 +79,7 @@ export class AppShellElement extends LitElement {
         <div slot="appContent">
           <mwc-top-app-bar @MDCTopAppBar:nav=${this.toggleDrawer}>
             <mwc-icon-button slot="navigationIcon" icon="menu"></mwc-icon-button>
-            <div slot="title">Rdx Demo</div>
+            <div slot="title">${document.title}</div>
           </mwc-top-app-bar>
           <app-view></app-view>
         </div>

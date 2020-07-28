@@ -1,7 +1,7 @@
 import { property, html, customElement, css } from 'lit-element'
 import { Connected, User, State, AuthSelectors } from './connected'
 import { sharedStyles } from './shared-styles'
-import { dispatch } from '../state'
+import { dispatch } from './connected'
 
 import '@material/mwc-button'
 

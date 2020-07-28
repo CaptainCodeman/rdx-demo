@@ -16,9 +16,6 @@ declare global {
 setCacheNameDetails({
   prefix: 'rdx-demo',
   suffix: 'v1',
-  precache: 'rdx-demo-precache',
-  runtime: 'rdx-demo-runtime',
-  googleAnalytics: 'rdx-demo-ga',
 });
 
 precacheAndRoute(self.__WB_MANIFEST);

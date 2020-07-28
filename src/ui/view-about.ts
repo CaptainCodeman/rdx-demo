@@ -16,7 +16,6 @@ export class ViewAboutElement extends LitElement {
       <p>This is a demo app to show development using:</p>
       <ul>
         <li><a href="https://github.com/CaptainCodeman/rdx">rdx</a> for state management</li>
-        <li><a href="https://github.com/CaptainCodeman/rdx-model">rdx-model</a> for state definitions</li>
         <li><a href="https://github.com/CaptainCodeman/js-router">js-router</a> for tiny client-side routing</li>
         <li><a href="https://firebase.google.com/docs/firestore">cloud firestore</a> for live NoSQL data</li>
         <li><a href="https://firebase.google.com/docs/auth">firebase auth</a> for authentication</li>
