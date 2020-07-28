@@ -58,7 +58,7 @@ export default createModel({
         })
       },
     }
-}
+  }
 })
 
 function providerFromName(name: string) {
