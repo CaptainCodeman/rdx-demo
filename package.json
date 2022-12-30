@@ -43,7 +43,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "connect-logger": "0.0.1",
     "esbuild": "^0.6.8",
-    "mocha": "^8.0.1",
+    "mocha": "^8.4.0",
     "mocha-typescript": "^1.1.17",
     "rollup": "^2.23.0",
     "rollup-plugin-minify-html-literals": "^1.2.4",
